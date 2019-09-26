@@ -13,8 +13,11 @@ app.use(bodyParser.json());
  
 app.use (require('./routes/usuario'));
   
-  mongoose.connect(process.env.URLDB, {useNewUrlParser: true});
+  mongoose.connect(process.env.URLDB, {useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true },(res,err)=>{
+    if(err) throw err;
+    console.log('Base de datos Online');
+  });
 
  app.listen(process.env.PORT,()=>{
     console.log('Escuchando puerto ',process.env.PORT);
-})
+});
