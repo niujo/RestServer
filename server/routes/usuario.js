@@ -3,7 +3,7 @@ const Usuario = require('../models/usuario')
 const app = express('express');
 
 app.get('/usuario', function (req, res) {
-    res.json('get Usuario Local');
+    res.json('get Usuario api rest');
   })
   
   app.post('/usuario', function (req, res) {
