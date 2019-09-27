@@ -12,9 +12,9 @@ app.get('/usuario', function (req, res) {
 
       let usuario = new Usuario({
         nombre: body.nombre,
-        email:body.email,
-        password:body.password,
-        role:body.role
+        email: body.email,
+        password: body.password,
+        role: body.role
       });
 
       usuario.save((err,usuarioDB)=>{
