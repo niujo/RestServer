@@ -9,14 +9,15 @@ app.get('/usuario', function (req, res) {
   app.post('/usuario', function (req, res) {
     
       let body =req.body;
-
+      console.log(body);
       let usuario = new Usuario({
         nombre: body.nombre,
         email: body.email,
         password: body.password,
         role: body.role
       });
-
+      console.log(body);
+      console.log("object");
       usuario.save((err,usuarioDB)=>{
         if (err) {
           return res.status(400).json({
